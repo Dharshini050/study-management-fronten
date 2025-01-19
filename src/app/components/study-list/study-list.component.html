@@ -1,0 +1,57 @@
+<div>
+  <h1>Study Management</h1>
+
+  <!-- Study List Table -->
+  <table>
+    <tr>
+      <th>Study Name</th>
+      <th>Phase</th>
+      <th>Sponsor</th>
+      <th>Description</th>
+      <th>Actions</th>
+    
+    </tr>
+    <tr *ngFor="let study of studies$ | async">
+      <td>{{ study.name }}</td>
+      <td>{{ study.phase }}</td>
+      <td>{{ study.sponsor }}</td>
+      <td>{{ study.description }}</td>
+      <td>
+        <button (click)="navigateToEditStudy(study.id, 'view')">View</button>        
+        <button (click)="deleteStudy(study.id)">Delete</button>
+      </td>
+    </tr>
+  </table>
+
+<br> 
+
+<br>
+<br>
+
+    <!-- Add Study Form -->
+    <form (ngSubmit)="onSubmit()">
+      <label for="name">Study Name:</label>
+      <input type="text" id="name" [(ngModel)]="studyName" name="study_name" required />
+      
+      <br>
+      <br>
+
+      <label for="phase">Phase:</label>
+      <input type="text" id="phase" [(ngModel)]="studyPhase" name="study_phase" required />
+      <br>
+      <br>
+  
+      <label for="sponsor">Sponsor:</label>
+      <input type="text" id="sponsor" [(ngModel)]="sponsorName" name="sponsor_name" required />
+      <br>
+      <br>
+  
+      <label for="description">Description:</label>
+      <textarea id="description" [(ngModel)]="studyDescription" name="study_description" required></textarea>
+      <br>
+      <br>
+  
+      <button type="submit">Add Study</button>
+    </form>
+  
+</div>

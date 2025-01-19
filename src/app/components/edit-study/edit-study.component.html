@@ -1,0 +1,82 @@
+<div>
+  <h1>Edit Study</h1>
+
+  <!-- Study Details Form -->
+  <form (ngSubmit)="saveStudy()">
+    <label>Name:</label>
+    <input type="text" [(ngModel)]="study.name" name="name" required />
+    <br>
+    <br>
+
+    <label>Phase:</label>
+    <input type="text" [(ngModel)]="study.phase" name="phase" required />
+    <br>
+    <br>
+
+    <label>Sponsor:</label>
+    <input type="text" [(ngModel)]="study.sponsor" name="sponsor" required />
+    <br>
+    <br>
+
+    <label>Description:</label>
+    <textarea [(ngModel)]="study.description" name="description"></textarea>
+
+    <br>
+    <br>
+    <button type="submit" style="display: block; margin: 0 auto;">Save Study</button>
+    
+  </form>
+
+  <h2>Subject Management for Study {{ studyId }}</h2>
+
+  <!-- Add Subject Form -->
+  <form (ngSubmit)="addSubject()">
+    <label>Subject Name:</label>
+    <input type="text" [(ngModel)]="subjectForm.subject_name" name="subject_name" required />
+    <br>
+    <br>
+
+    <label>Age:</label>
+    <input type="number" [(ngModel)]="subjectForm.age" name="age" required />
+    <br>
+    <br>
+
+    <label>Gender:</label>
+    <select [(ngModel)]="subjectForm.gender" name="gender" required>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="other">Other</option>
+    </select>
+    <br>
+    <button type="submit" style="display: block; margin: 0 auto;">Add Subject</button>
+  </form>
+
+  <!-- Subject Table -->
+  <h3>Subjects</h3>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Subject Name</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let subject of study?.subjects">
+        <td>{{ subject.subject_name }}</td>
+        <td>{{ subject.age }}</td>
+        <td>{{ subject.gender }}</td>
+        <td>
+          <button (click)="deleteSubject(subject.id)">Delete</button>
+          <button (click)="editSubject(subject.id)">Edit</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button (click)="navigateToMainPage()">
+    Back to Main Page
+  </button>
+
+</div>

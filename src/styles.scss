@@ -1,1 +1,67 @@
 /* You can add global styles to this file, and also import other style files */
+/* Set the page background to light blue */
+body {
+    background-color: #ADD8E6;
+    font-family: Arial, sans-serif;
+}
+
+/* Style the table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+/* Style the table headers */
+th {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+}
+
+/* Style the table rows */
+td {
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+/* Add zebra striping to table rows */
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.submit-button {
+    padding: 15px 30px;          /* Increase padding to make the button bigger */
+    font-size: 18px;             /* Slightly bigger font */
+    background-color: #003366;   /* Dark blue background */
+    color: white;                /* White text color */
+    border: none;                /* Remove border */
+    border-radius: 5px;          /* Rounded corners */
+    cursor: pointer;            /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth color transition on hover */
+    margin-top: 20px;            /* Space above the button */
+}
+
+.submit-button:hover {
+    background-color: #002244;   /* Darker blue on hover */
+}
+
+.align-right {
+    float: right;
+}
+
+
+
+/* Style the action links */
+a {
+    padding: 5px 10px;
+    margin-right: 5px;
+    text-decoration: none;
+    color: white;
+    background-color: #4CAF50;
+    border-radius: 4px;
+}
+
+a:hover {
+    background-color: #45a049;
+}
